@@ -116,8 +116,8 @@ public class Main {
                     overlapThreshold = intersectionDisalign.size() / (double) Math.max(c1.size(), c2.size());
 
                     if (debug) {
-                        System.out.println(c1);
-                        System.out.println(c2);
+                        System.out.println(c1 + " " + f1.getClasses().get(indexc1));
+                        System.out.println(c2 + " " + f2.getClasses().get(indexc2));
                         System.out.println(overlapThreshold);
                     }
                     if (overlapThreshold >= threshold) {
@@ -140,6 +140,7 @@ public class Main {
                     boolean c2Incr = false;
                     List<String> locked;
                     List<String> movable = new ArrayList<>();
+
                     do {
                         if (c1Incr) {
                             indexc1++;
@@ -178,8 +179,8 @@ public class Main {
 
                         if (intersectionDisalign.size() == movable.size()) {
                             if (debug) {
-                                System.out.println(locked);
-                                System.out.println(movable);
+                                System.out.println(locked + " " + f1.getClasses().get(indexc1));
+                                System.out.println(movable + " " + f2.getClasses().get(indexc2));
                                 System.out.println(overlapThreshold);
                             }
                             if (overlapThreshold >= threshold) {
@@ -212,8 +213,8 @@ public class Main {
 
                 } else {
                     if (debug) {
-                        System.out.println(c1);
-                        System.out.println(c2);
+                        System.out.println(c1 + " " + f1.getClasses().get(indexc1));
+                        System.out.println(c2 + " " + f2.getClasses().get(indexc2));
                         System.out.println(overlapThreshold);
                     }
                     if (overlapThreshold >= threshold) {

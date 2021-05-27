@@ -95,6 +95,9 @@ public class Main {
             Integer indexc2 = 0;
 
 
+
+            Integer underThreshold = 0;
+
             for (int i = 0; i < Math.min(f1.getClauses().size(), f2.getClauses().size()); i++) {
                 List<String> c1;
                 List<String> c2;
@@ -107,6 +110,8 @@ public class Main {
 
                 Collection<String> intersection = CollectionUtils.intersection(c1, c2);
                 double overlapThreshold = intersection.size() / (double) Math.max(c1.size(), c2.size());
+
+
 
                 if (c1.size() != c2.size()) {
                     if (debug)
@@ -133,6 +138,9 @@ public class Main {
                             row.add("1");
 
                             printer.printRecord(row);
+
+                            underThreshold++;
+
                         }
                     }
 
@@ -197,6 +205,8 @@ public class Main {
                                     row.add("0");
 
                                     printer.printRecord(row);
+
+                                    underThreshold++;
                                 }
                             }
 
@@ -230,6 +240,8 @@ public class Main {
                             row.add("0");
                             row.add("1");
 
+                            underThreshold++;
+
                             printer.printRecord(row);
                         }
                     }
@@ -259,6 +271,9 @@ public class Main {
             while ((line = br.readLine()) != null) {
                 System.out.println(f1.getFilename() + line.replace("[1]", "").replace("NaN", "1.0").replace(" ", "\t"));
             }
+
+            System.out.println("Under threshold clauses: " +underThreshold);
+
 
         } catch (Exception e) {
             e.printStackTrace();

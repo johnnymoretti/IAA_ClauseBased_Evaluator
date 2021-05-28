@@ -97,6 +97,7 @@ public class Main {
 
 
             Integer underThreshold = 0;
+            Integer clausesNumber = 0;
 
             for (int i = 0; i < Math.min(f1.getClauses().size(), f2.getClauses().size()); i++) {
                 List<String> c1;
